@@ -1,0 +1,163 @@
+:root{
+  --bg:#0b1220;
+  --card:#0f172a;
+  --muted:#94a3b8;
+  --text:#e2e8f0;
+  --primary:#0ea5e9; /* cian */
+  --accent:#22c55e;  /* verde */
+  --radius:18px;
+  --shadow:0 10px 30px rgba(2,6,23,.25);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg,#060b16 0%, #0b1220 40%, #0b1220 100%);
+}
+
+/* Layout */
+.container{max-width:1120px;margin:0 auto;padding:0 1.2rem}
+.section{padding:64px 0}
+.section.alt{background:rgba(255,255,255,.02)}
+.section-lead{color:var(--muted);margin-top:-8px}
+
+/* Topbar */
+.topbar{background:#020617;color:#cbd5e1;font-size:.92rem}
+.topbar .container{display:flex;justify-content:space-between;padding:.5rem 1.2rem}
+
+/* Header / Nav */
+.header{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter:saturate(140%) blur(10px);
+  background:rgba(2,6,23,.6);
+  border-bottom:1px solid rgba(148,163,184,.1);
+}
+.nav{display:flex;align-items:center;gap:1rem;padding:1rem 0}
+.brand{font-weight:800;letter-spacing:.2px;color:#fff;text-decoration:none;font-size:1.2rem}
+.menu{margin-left:auto;display:flex;gap:1rem}
+.menu a{color:#e2e8f0;text-decoration:none;padding:.6rem .8rem;border-radius:12px}
+.menu a:hover{background:rgba(255,255,255,.06)}
+#nav-toggle{display:none}
+.burger{display:none;font-size:1.5rem;cursor:pointer}
+
+/* Hero */
+.hero{padding:64px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+.hero-copy h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:.2rem 0 1rem}
+.gradient{
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-copy p{color:#cbd5e1;font-size:1.05rem}
+.hero-bullets{list-style:none;padding:0;margin:1rem 0 0;color:#cbd5e1;display:flex;gap:1rem;flex-wrap:wrap}
+.hero-card .card{margin-top:8px}
+
+/* Cards / grid */
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards .card{
+  background:var(--card);
+  border:1px solid rgba(148,163,184,.12);
+  border-radius:var(--radius);
+  padding:1.1rem 1.1rem 1.2rem;
+  box-shadow:var(--shadow);
+  transition:transform .2s ease, border-color .2s ease;
+}
+.cards .card:hover{transform:translateY(-4px);border-color:rgba(14,165,233,.5)}
+.card h3{margin:.2rem 0 .4rem;font-size:1.1rem}
+.card p{color:#cbd5e1;margin:.2rem 0 .8rem}
+.link{color:#a5f3fc;text-decoration:none}
+.link:hover{text-decoration:underline}
+
+/* Buttons */
+.btn{
+  display:inline-block;border:none;border-radius:14px;
+  padding:.9rem 1.1rem;font-weight:700;text-decoration:none;
+}
+.btn-primary{background:linear-gradient(90deg,var(--primary),#38bdf8);color:#001018}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{background:rgba(255,255,255,.06);color:#e2e8f0}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.cta{display:flex;gap:.7rem;flex-wrap:wrap;margin:1rem 0}
+
+/* Price cards */
+.prices{grid-template-columns:repeat(4,minmax(0,1fr))}
+.price-tag{font-size:2rem;font-weight:800;color:#a7f3d0;margin:.3rem 0 .6rem}
+.note{color:var(--muted);margin-top:1rem}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.step{
+  background:var(--card);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);
+  padding:1rem;display:flex;gap:.8rem;align-items:center
+}
+.step span{
+  width:34px;height:34px;display:inline-grid;place-items:center;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  color:#001018;border-radius:50%;font-weight:800
+}
+
+/* Forms */
+.form{background:var(--card);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.form label{display:block;margin-bottom:.8rem}
+input,textarea{
+  width:100%;margin-top:.35rem;background:#0b132b;color:var(--text);
+  border:1px solid rgba(148,163,184,.2);border-radius:12px;padding:.75rem
+}
+input:focus,textarea:focus{outline:2px solid var(--primary);border-color:transparent}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+
+/* Footer */
+.footer{border-top:1px solid rgba(148,163,184,.12);background:#070b14;padding:2rem 0;margin-top:1rem}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:1rem}
+.footer a{color:#cbd5e1;text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.copy{text-align:center;color:var(--muted);font-size:.9rem;margin:1.2rem 0}
+
+/* Breadcrumbs */
+.breadcrumbs ol{display:flex;gap:.5rem;list-style:none;padding:0;margin:1rem 0}
+.breadcrumbs a{color:#a5f3fc;text-decoration:none}
+.breadcrumbs a:hover{text-decoration:underline}
+.breadcrumbs li::after{content:"/";margin-left:.5rem;color:#708090}
+.breadcrumbs li:last-child::after{content:""}
+
+/* WhatsApp button */
+.whatsapp{
+  position:fixed;right:16px;bottom:16px;z-index:20;
+  width:56px;height:56px;display:grid;place-items:center;
+  background:linear-gradient(90deg,#22c55e,#86efac);color:#042d14;
+  text-decoration:none;border-radius:50%;box-shadow:var(--shadow);font-size:24px
+}
+.whatsapp:hover{filter:brightness(1.05)}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prices{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .contact{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .menu{position:absolute;inset:64px 0 auto 0;background:#020617;display:none;flex-direction:column;padding:1rem 1.2rem}
+  #nav-toggle:checked ~ .menu{display:flex}
+  .burger{display:block;margin-left:auto}
+}
+@media (max-width: 600px){
+  .grid{grid-template-columns:1fr}
+  .prices{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+
+/* Light mode (opcional) */
+@media (prefers-color-scheme: light){
+  :root{--bg:#f8fafc;--card:#ffffff;--text:#0f172a}
+  body{background:#f8fafc}
+  .topbar,.header{background:#ffffff;color:#0f172a}
+  .menu a{color:#0f172a}
+  .hero-bullets,.card p,.section-lead,.copy{color:#475569}
+}
